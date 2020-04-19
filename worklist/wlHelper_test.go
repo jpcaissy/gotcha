@@ -6,7 +6,7 @@ import (
 
 	"golang.org/x/tools/go/ssa"
 
-	"github.com/akwick/gotcha/ssabuilder"
+	"github.com/jpcaissy/gotcha/ssabuilder"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -49,7 +49,7 @@ func TestGetSuccessors(t *testing.T) {
 		succs []succnode
 	}{
 		{
-			path: "github.com/akwick/gotcha",
+			path: "github.com/jpcaissy/gotcha",
 			src:  []string{"../tests/examplbeCode/hello2.go"},
 			succs: []succnode{
 				succnode{
@@ -135,7 +135,7 @@ func TestIdoms(t *testing.T) {
 		idoms []idomRes
 	}{
 		{
-			path: "github.com/akwick/gotcha",
+			path: "github.com/jpcaissy/gotcha",
 			src:  []string{"../tests/exampleCode/hello2.go"},
 			idoms: []idomRes{
 				idomRes{
@@ -157,7 +157,7 @@ func TestIdoms(t *testing.T) {
 				},
 			},
 		}, {
-			path: "github.com/akwick/gotcha",
+			path: "github.com/jpcaissy/gotcha",
 			src:  []string{"../tests/exampleCode/idom.go"},
 			idoms: []idomRes{
 				idomRes{

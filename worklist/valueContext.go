@@ -4,8 +4,8 @@ import (
 	"log"
 	"strconv"
 
-	"github.com/akwick/gotcha/lattice"
-	"github.com/akwick/gotcha/lattice/taint"
+	"github.com/jpcaissy/gotcha/lattice"
+	"github.com/jpcaissy/gotcha/lattice/taint"
 
 	"github.com/pkg/errors"
 

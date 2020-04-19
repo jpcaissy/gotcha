@@ -3,7 +3,7 @@ package tests
 import (
 	"testing"
 
-	"github.com/akwick/gotcha/worklist"
+	"github.com/jpcaissy/gotcha/worklist"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -32,7 +32,7 @@ func check(testData []*testDataStruct, t *testing.T) {
 }
 
 var taintFile = "./sourcesAndSinksTest.txt"
-var path = "github.com/akwick/gotcha"
+var path = "github.com/jpcaissy/gotcha"
 
 type testDataStruct struct {
 	sourceFile    []string

@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/akwick/gotcha/lattice"
+	"github.com/jpcaissy/gotcha/lattice"
 	"testing"
 
 	"golang.org/x/tools/go/ssa"

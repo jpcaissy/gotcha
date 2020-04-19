@@ -152,5 +152,5 @@ type td struct {
 
 var (
 	taintfile = "../sourcesAndSinks.txt"
-	path      = "github.com/akwick/gotcha"
+	path      = "github.com/jpcaissy/gotcha"
 )

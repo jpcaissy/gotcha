@@ -9,8 +9,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/akwick/gotcha/lattice/taint"
-	"github.com/akwick/gotcha/ssabuilder"
+	"github.com/jpcaissy/gotcha/lattice/taint"
+	"github.com/jpcaissy/gotcha/ssabuilder"
 
 	"github.com/pkg/errors"
 	"golang.org/x/tools/go/pointer"

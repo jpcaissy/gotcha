@@ -1,8 +1,8 @@
 package worklist
 
 import (
-	"github.com/akwick/gotcha/lattice"
-	"github.com/akwick/gotcha/lattice/taint"
+	"github.com/jpcaissy/gotcha/lattice"
+	"github.com/jpcaissy/gotcha/lattice/taint"
 	"log"
 
 	"github.com/pkg/errors"

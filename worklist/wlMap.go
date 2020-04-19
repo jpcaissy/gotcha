@@ -1,7 +1,7 @@
 package worklist
 
 import (
-	"github.com/akwick/gotcha/ssabuilder"
+	"github.com/jpcaissy/gotcha/ssabuilder"
 	"strconv"
 )
 

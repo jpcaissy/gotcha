@@ -1,6 +1,6 @@
 package main
 
-import "github.com/akwick/gotcha/tests/exampleCode/h"
+import "github.com/jpcaissy/gotcha/tests/exampleCode/h"
 
 func main() {
 	l := h.NewList("Hello World")

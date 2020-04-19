@@ -3,8 +3,8 @@ package taint
 import (
 	"go/types"
 
-	"github.com/akwick/gotcha/lattice"
-	"github.com/akwick/gotcha/transferFunction"
+	"github.com/jpcaissy/gotcha/lattice"
+	"github.com/jpcaissy/gotcha/transferFunction"
 
 	"golang.org/x/tools/go/pointer"
 	"golang.org/x/tools/go/ssa"

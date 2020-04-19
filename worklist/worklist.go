@@ -2,9 +2,9 @@ package worklist
 
 import (
 	"fmt"
-	"github.com/akwick/gotcha/lattice/taint"
-	"github.com/akwick/gotcha/ssabuilder"
-	"github.com/akwick/gotcha/transferFunction"
+	"github.com/jpcaissy/gotcha/lattice/taint"
+	"github.com/jpcaissy/gotcha/ssabuilder"
+	"github.com/jpcaissy/gotcha/transferFunction"
 	"log"
 	"os"
 	"time"

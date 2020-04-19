@@ -1,7 +1,7 @@
 package taint
 
 import (
-	"github.com/akwick/gotcha/lattice"
+	"github.com/jpcaissy/gotcha/lattice"
 	"reflect"
 	"strings"
 

@@ -37,7 +37,7 @@ func build(t *testing.T) {
 	gopath := os.Getenv("GOPATH")
 	assert.NotEmpty(t, gopath, "")
 	cmd := exec.Command("go", "build")
-	dir := gopath + "/src/github.com/akwick/gotcha"
+	dir := gopath + "/src/github.com/jpcaissy/gotcha"
 	cmd.Dir = dir
 	err := cmd.Start()
 	if !assert.Nil(t, err) {

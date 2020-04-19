@@ -3,12 +3,12 @@ package tests
 import (
 	"testing"
 
-	"github.com/akwick/gotcha/worklist"
+	"github.com/jpcaissy/gotcha/worklist"
 )
 
 func benchmarkDoAnalysis(file []string, b *testing.B) {
 	for n := 0; n < b.N; n++ {
-		worklist.DoAnalysis("github.com/akwick/gotcha", file, "./sourcesAndSinksTest.txt", false, "", true)
+		worklist.DoAnalysis("github.com/jpcaissy/gotcha", file, "./sourcesAndSinksTest.txt", false, "", true)
 	}
 }
 
