@@ -37,6 +37,11 @@ func (e *ErrInFlows) Error() (s string) {
 	}
 	return
 }
+// Error returns a string of all flows beeing in e.
+func (e *ErrInFlows) Errors() []*taint.ErrLeak {
+	return e.errs
+}
+
 
 // NumberOfFlows returns the number of taint.ErrLeaks in ErrInFlows
 func (e *ErrInFlows) NumberOfFlows() int {
