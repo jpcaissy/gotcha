@@ -1,7 +1,6 @@
 package worklist
 
 import (
-	"fmt"
 	"github.com/jpcaissy/gotcha/lattice/taint"
 	"github.com/jpcaissy/gotcha/ssabuilder"
 	"github.com/jpcaissy/gotcha/transferFunction"
@@ -47,22 +46,24 @@ func init() {
 
 // Logging
 func setLogger() {
-	var err error
-	logFile, err = os.OpenFile(now+"_Log.txt", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
-	if err != nil {
-		fmt.Printf("%v", err)
-	}
-	log.SetOutput(logFile)
+	//var err error
+	//logFile, err = os.OpenFile(now+"_Log.txt", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	//if err != nil {
+	//	fmt.Printf("%v", err)
+	//}
+	//log.SetOutput(logFile)
+	log.SetOutput(os.Stdout)
 	log.SetFlags(log.Llongfile)
 	// TODO defer handling
 	//	defer logFile.Close()
 
-	logStat, err := os.OpenFile(now+"_Log.stat", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
-	//	defer logStat.Close()
-	if err != nil {
-		fmt.Printf("failed creating stat file: %v", err)
-	}
-	stat = log.New(logStat, "", 0)
+	//logStat, err := os.OpenFile(now+"_Log.stat", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	////	defer logStat.Close()
+	//if err != nil {
+	//	fmt.Printf("failed creating stat file: %v", err)
+	//}
+	//stat = log.New(logStat, "", 0)
+	stat = log.New(os.Stdout, "", 0)
 }
 
 // DoAnalysis handles the worklist algorithm.
