@@ -75,7 +75,7 @@ func (e ErrLeak) Error() (s string) {
 		s += arg.String()
 		s += " - " + arg.Name() + " of type: " + arg.Type().String() + " "
 		pos := arg.Pos()
-		if arg.Parent() != nil && arg.Parent().Prog != nil && arg.Parent().Prog.Fset != nil {
+		if pos != 0 && arg.Parent() != nil && arg.Parent().Prog != nil && arg.Parent().Prog.Fset != nil {
 			fileset := arg.Parent().Prog.Fset
 			location := fileset.File(pos).Line(pos)
 			filepath := fileset.File(pos).Name()
