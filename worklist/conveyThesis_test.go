@@ -88,7 +88,7 @@ func TestChannelExample(t *testing.T) {
 			t5 = make interface{} <- string (t2)                        interface{}
 			*t4 = t5
 			t6 = slice t3[:]                                          []interface{}
-			t7 = fmt.Printf(" %s\n":string, t6...)               (n int, err error)
+			t7 = log.Printf(" %s\n":string, t6...)               (n int, err error)
 			return
 		*/
 		// Element 6 of the worklist

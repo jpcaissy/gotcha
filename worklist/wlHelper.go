@@ -3,7 +3,6 @@ package worklist
 import (
 	"github.com/jpcaissy/gotcha/lattice"
 	"github.com/jpcaissy/gotcha/lattice/taint"
-	"log"
 
 	"github.com/pkg/errors"
 
@@ -488,7 +487,7 @@ func logging() {
 	}
 	log.Printf("### Maximum elements in worklist: %d ### \n", maxElemsIn)
 
-	stat.Printf("#contexts, %d,", vcs.len())
-	stat.Printf("#transitions, %d,", len(transitions))
-	stat.Printf("#maxWorklist, %d", maxElemsIn)
+	log.Printf("#contexts, %d,", vcs.len())
+	log.Printf("#transitions, %d,", len(transitions))
+	log.Printf("#maxWorklist, %d", maxElemsIn)
 }

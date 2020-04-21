@@ -32,7 +32,7 @@ func IsIndirectPtr(i ssa.Value) (canPoint bool, val ssa.Value) {
 		val = i
 	}
 	// call function like described in the api
-	//	fmt.Printf("val: %s | val.Type() %v | val.Type().Underlying() %v\n", val, val.Type(), val.Type().Underlying())
+	//	log.Printf("val: %s | val.Type() %v | val.Type().Underlying() %v\n", val, val.Type(), val.Type().Underlying())
 	_, isRange := val.(*ssa.Range)
 	if isRange {
 		return false, val

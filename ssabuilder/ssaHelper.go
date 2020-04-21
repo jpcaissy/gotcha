@@ -72,7 +72,7 @@ func (ssah *ssaHelper) GetMainPackage() *ssa.Package {
 //	file, err := conf.ParseFile(fileName, nil)
 //	if err != nil {
 //		logger.Print(err)
-//		fmt.Print(&buf)
+//		log.Print(&buf)
 //		return nil, err
 //	}
 //
@@ -81,13 +81,13 @@ func (ssah *ssaHelper) GetMainPackage() *ssa.Package {
 //	iprog, err := conf.Load()
 //	if err != nil {
 //		logger.Print(err)
-//		fmt.Print(&buf)
+//		log.Print(&buf)
 //		return nil, err
 //	}
 //
 //	prog := ssautil.CreateProgram(iprog, ssa.SanityCheckFunctions)
 //
-//	fmt.Print(&buf)
+//	log.Print(&buf)
 //
 //	return prog, nil
 //}

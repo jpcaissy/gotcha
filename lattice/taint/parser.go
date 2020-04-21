@@ -3,7 +3,6 @@ package taint
 import (
 	"bufio"
 	"errors"
-	"log"
 	"os"
 	"strings"
 )
@@ -44,7 +43,6 @@ func Read(fileName string) error {
 	file, err := os.Open(fileName)
 	defer file.Close()
 	if err != nil {
-		log.Print(err)
 		return err
 	}
 
@@ -118,7 +116,7 @@ func getTaintData(s []string) (*Data, error) {
 	retValI := 1
 	// Handling func(something)
 	for i, strng := range s {
-		//		fmt.Print(strng + " ")
+		//		log.Print(strng + " ")
 		sig = sig + " " + strng
 		if strings.HasSuffix(strng, ")") {
 			retValI = i
@@ -129,7 +127,7 @@ func getTaintData(s []string) (*Data, error) {
 	// Handling the return values
 	for i := retValI + 1; i < len(s); i++ {
 		sig = sig + " " + s[i]
-		//		fmt.Print(" retVal: " + s[i] + " ")
+		//		log.Print(" retVal: " + s[i] + " ")
 		if strings.HasSuffix(s[i], ";") {
 			retValI = i
 			break
@@ -149,7 +147,7 @@ func getTaintData(s []string) (*Data, error) {
 		}
 	}
 	callee = strings.TrimSuffix(callee, ">")
-	//	fmt.Println(" callee: " + callee)
+	//	log.Println(" callee: " + callee)
 
 	td := &Data{&taintData{sig: sig, callee: callee}}
 	if s[len(s)-2] != "->" {

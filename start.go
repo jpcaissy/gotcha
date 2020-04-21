@@ -13,9 +13,9 @@ import (
 func main() {
 	// Explains how to use the command line flags
 	flag.Usage = func() {
-		fmt.Printf("Usage and defaults of %s: \n", os.Args[0])
-		fmt.Printf("The flags allpkgs, path and ssf are optional. \n")
-		fmt.Printf("The flag sourceFilesFlag is mandatory.\n")
+		log.Printf("Usage and defaults of %s: \n", os.Args[0])
+		log.Printf("The flags allpkgs, path and ssf are optional. \n")
+		log.Printf("The flag sourceFilesFlag is mandatory.\n")
 		flag.PrintDefaults()
 	}
 
@@ -36,18 +36,18 @@ func main() {
 		if err != nil {
 			switch err := err.(type) {
 			case *worklist.ErrInFlows:
-				fmt.Printf("err.NumberOfFlows: %d \n", err.NumberOfFlows())
-				fmt.Printf("err.Error() %s\n", err.Error())
+				log.Printf("err.NumberOfFlows: %d \n", err.NumberOfFlows())
+				log.Printf("err.Error() %s\n", err.Error())
 			default:
-				fmt.Printf("Errors: %+v\n", err)
+				log.Printf("Errors: %+v\n", err)
 				os.Exit(1)
 			}
 		} else {
-			fmt.Printf("Gongrats. Gotcha has not found an error.\n")
-			fmt.Printf("Your parameters are: \n")
-			fmt.Printf("path: %s\n", *path)
-			fmt.Printf("source file: %s\n", sourceFilesFlag)
-			fmt.Printf("sources and sinks file: %s\n", *ssf)
+			log.Printf("Gongrats. Gotcha has not found an error.\n")
+			log.Printf("Your parameters are: \n")
+			log.Printf("path: %s\n", *path)
+			log.Printf("source file: %s\n", sourceFilesFlag)
+			log.Printf("sources and sinks file: %s\n", *ssf)
 			os.Exit(0)
 		}
 	}

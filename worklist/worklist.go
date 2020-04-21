@@ -1,21 +1,18 @@
 package worklist
 
 import (
+	"os"
+
 	"github.com/jpcaissy/gotcha/lattice/taint"
 	"github.com/jpcaissy/gotcha/ssabuilder"
 	"github.com/jpcaissy/gotcha/transferFunction"
-	"log"
-	"os"
-	"time"
 
+	"github.com/sirupsen/logrus"
 	"github.com/pkg/errors"
 
 	"golang.org/x/tools/go/pointer"
 	"golang.org/x/tools/go/ssa"
 )
-
-var logFile *os.File
-var now string
 
 // Variables for the creation of SSA and the pointer information
 var ssaProg *ssa.Program
@@ -35,36 +32,15 @@ var errFlows *ErrInFlows
 
 // Error messages
 var failLUP = "buildLUP(%s, %s) failed"
-
-// Log stats
-var stat *log.Logger
+var log *logrus.Logger
 
 func init() {
-	now = time.Now().String()
-	setLogger()
-}
-
-// Logging
-func setLogger() {
-	//var err error
-	//logFile, err = os.OpenFile(now+"_Log.txt", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
-	//if err != nil {
-	//	fmt.Printf("%v", err)
-	//}
-	//log.SetOutput(logFile)
+	log = logrus.New()
 	log.SetOutput(os.Stdout)
-	log.SetFlags(log.Llongfile)
-	// TODO defer handling
-	//	defer logFile.Close()
-
-	//logStat, err := os.OpenFile(now+"_Log.stat", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
-	////	defer logStat.Close()
-	//if err != nil {
-	//	fmt.Printf("failed creating stat file: %v", err)
-	//}
-	//stat = log.New(logStat, "", 0)
-	stat = log.New(os.Stdout, "", 0)
+	log.SetLevel(logrus.PanicLevel)
+	log.SetReportCaller(false)
 }
+
 
 // DoAnalysis handles the worklist algorithm.
 // path is the relative path starting from $GOPATH

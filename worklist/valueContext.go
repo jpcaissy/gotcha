@@ -1,7 +1,6 @@
 package worklist
 
 import (
-	"log"
 	"strconv"
 
 	"github.com/jpcaissy/gotcha/lattice"

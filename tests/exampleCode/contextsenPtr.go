@@ -14,7 +14,7 @@ func f(s string) {
 }
 
 func sink(s *string) {
-	fmt.Printf("A gopher reaches a sink: %s \n", *s)
+	log.Printf("A gopher reaches a sink: %s \n", *s)
 }
 
 // copied from 10_FuncAndVarDecl

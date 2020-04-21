@@ -19,7 +19,7 @@ func f(ch chan string) {
 }
 
 func sink(s string) {
-	fmt.Println(s)
+	log.Println(s)
 }
 
 func secret() string {

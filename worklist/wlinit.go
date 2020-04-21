@@ -2,11 +2,8 @@
 package worklist
 
 import (
-	"fmt"
 	"go/token"
 	"go/types"
-	"log"
-	"os"
 	"strings"
 
 	"github.com/jpcaissy/gotcha/lattice/taint"
@@ -63,7 +60,7 @@ func initSSAandPTA(path string, sourcefiles []string, sourceAndSinkFile string, 
 		}
 	}
 	log.Printf("Analyze: %d : packages(%v)\n", len(contextpkgs), contextpkgs)
-	stat.Printf("#packages, %d,", len(contextpkgs))
+	log.Printf("#packages, %d,", len(contextpkgs))
 
 	// Setup and analyze pointers
 	// pointer analysis needs a package with a main function
@@ -105,7 +102,6 @@ ctxtfor:
 	}
 	// only add the blocks and instructions if the package should be analyzed.
 	if analyze {
-		ssaFun.WriteTo(logFile)
 		for _, block := range ssaFun.Blocks {
 			for _, instr := range block.Instrs {
 				// build a new context call site for every instruction within the main value context
@@ -228,8 +224,6 @@ func wlInit(path string, sourcefiles []string, sourceAndSinkFile string, allpack
 	isPointer = ptranalysis
 	mainFunc, err = initSSAandPTA(path, sourcefiles, sourceAndSinkFile, pkgs)
 	if err != nil {
-		fmt.Fprintln(os.Stderr, err.Error())
-		// a call to os.Exit(1) follows -> exit of program
 		log.Fatalf("Fatal error: %s\n", err.Error())
 	}
 	initContext(mainFunc)

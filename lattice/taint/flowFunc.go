@@ -3,7 +3,6 @@ package taint
 import (
 	"github.com/jpcaissy/gotcha/lattice"
 	"github.com/jpcaissy/gotcha/transferFunction"
-	"log"
 	"strconv"
 	"strings"
 	"unicode"
@@ -328,9 +327,6 @@ func handleSinkDetection(c ssa.CallCommon, l lattice.Latticer, ptr bool) {
 			for _, arg := range args {
 				valsPtsTo := lptr.GetSSAValMayAlias(arg)
 				for _, v := range valsPtsTo {
-					if v.Name() == "t2" {
-						log.Printf("t2 aliases %s\n", arg.Name())
-					}
 					if lptr.GetVal(v) == Tainted || lptr.GetVal(v) == Both {
 						argsErr = append(argsErr, arg)
 					}

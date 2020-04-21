@@ -14,7 +14,7 @@ func f(c chan string) {
 	sink(y)
 	a := "Hello Gopher"
 	b := g(a)
-	fmt.Printf(" %s\n", b)
+	log.Printf(" %s\n", b)
 }
 
 func g(s string) string {
@@ -23,7 +23,7 @@ func g(s string) string {
 }
 
 func sink(s string) {
-	fmt.Printf("An gopher reaches a sink: %s \n", s)
+	log.Printf("An gopher reaches a sink: %s \n", s)
 }
 
 func source() string {
